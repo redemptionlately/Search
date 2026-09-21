@@ -13,7 +13,7 @@
       <text wx:if="{{item.sourceUrl.indexOf('example.edu.cn') >= 0}}" class="tag">示例</text>
       <text wx:elif="{{item.verified}}" class="tag">已核验</text>
       <text wx:else class="tag">第三方整理</text>
-      <view class="muted" wx:if="{{item.politics != null}}">单科：{{item.politics > 100 ? '管综' : '政'}}{{item.politics}}/外{{item.english}}<text wx:if="{{item.mathOrPro != null}}">/专{{item.mathOrPro}}</text></view>
+      <view class="muted" wx:if="{{item.politics != null}}">单科：{{item.politics > 100 ? '管综' : '政'}}{{item.politics}}/外{{item.english}}<text wx:if="{{item.mathOrPro != null}}">/专一{{item.mathOrPro}}</text><text wx:if="{{item.pro2 != null}}">/专二{{item.pro2}}</text></view>
       <view class="muted" wx:if="{{item.planCount != null || item.retestCount != null || item.admitCount != null}}">计划{{item.planCount || '?'}}人<text wx:if="{{item.retestCount != null}}"> · 进复试{{item.retestCount}}人</text><text wx:if="{{item.admitCount != null}}"> · 录取{{item.admitCount}}人</text></view>
       <view class="muted" wx:if="{{item.minAdmit != null || item.maxAdmit != null || item.avgAdmit != null}}">录取分：<text wx:if="{{item.minAdmit != null}}">最低{{item.minAdmit}} </text><text wx:if="{{item.maxAdmit != null}}">最高{{item.maxAdmit}} </text><text wx:if="{{item.avgAdmit != null}}">平均{{item.avgAdmit}}</text></view>
       <view class="muted" wx:if="{{item.reason}}">变动原因：{{item.reason}}</view>
