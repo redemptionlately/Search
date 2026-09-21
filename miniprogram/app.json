@@ -3,6 +3,7 @@
     "pages/home/index",
     "pages/map-explore/index",
     "pages/search-normal/index",
+    "pages/national-line/index",
     "pages/school-detail/index",
     "pages/major-score/index",
     "pages/notice-list/index"
@@ -20,6 +21,7 @@
       { "pagePath": "pages/home/index", "text": "首页" },
       { "pagePath": "pages/map-explore/index", "text": "地图" },
       { "pagePath": "pages/search-normal/index", "text": "查分" },
+      { "pagePath": "pages/national-line/index", "text": "国家线" },
       { "pagePath": "pages/notice-list/index", "text": "公告" }
     ]
   },

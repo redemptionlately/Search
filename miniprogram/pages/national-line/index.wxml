@@ -1,0 +1,21 @@
+<view class="card">
+  <view style="display:flex;gap:12rpx;">
+    <picker mode="selector" range="{{years}}" bindchange="pickYear"><view class="tag">{{year}}年</view></picker>
+    <picker mode="selector" range="{{regions}}" bindchange="pickRegion"><view class="tag">{{regions[regionIdx]}}</view></picker>
+    <picker mode="selector" range="{{degrees}}" bindchange="pickDegree"><view class="tag">{{degree}}</view></picker>
+  </view>
+  <view class="muted" style="margin-top:8rpx;">总分与单科须同时过线；点击行复制研招网来源链接</view>
+</view>
+<view class="card">
+  <view class="title" style="font-size:30rpx;">{{year}}年国家线（{{rows.length}}行）</view>
+  <block wx:for="{{rows}}" wx:key="*this">
+    <view style="padding:12rpx 0;border-bottom:1rpx solid #f0f0f0;" bindtap="copySource" data-url="{{item.sourceUrl}}">
+      <view><text class="tag">{{item.degreeType}}</text><text style="font-weight:600;">{{item.category}}</text><text wx:if="{{item.sub}}" class="muted"> · {{item.sub}}</text></view>
+      <view style="margin-top:4rpx;">总分 <text style="font-size:36rpx;font-weight:700;color:#1A56DB;">{{item.total}}</text>
+        <text class="muted"> 单科100分:{{item.s100}} / 150分+:{{item.s150}}</text>
+        <text wx:if="{{item.diff !== null}}" class="tag {{item.diff > 0 ? 'up' : item.diff < 0 ? 'down' : ''}}">{{item.diff > 0 ? '▲+' : item.diff < 0 ? '▼' : '—'}}{{item.diff}}</text>
+      </view>
+    </view>
+  </block>
+  <view wx:if="{{!rows.length}}" class="muted">暂无该口径数据</view>
+</view>

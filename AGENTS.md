@@ -100,9 +100,9 @@ npm run check            # JSON schema 校验 seed + _incoming
 
 ## 10. 当前 TODO（按顺序做）
 
-1. [ ] 云开发环境 + 集合建成（按 docs/CLOUD_DB_SETUP.md）
-2. [ ] 国家线 2023-2025 入库（tools 脚本 + 人工核验）
-3. [ ] 20 所热门院校 seed 换真实数据（含坐标）
+1. [ ] 云开发环境 + 集合建成（按 docs/CLOUD_DB_SETUP.md，新增 `national_lines` 集合）
+2. [x] 国家线 2023-2025 入库（`database/seed/national_lines.json`，研招网已核验，`pages/national-line` 可查同比涨跌）
+3. [x] 21 所热门院校基础信息（含坐标，`database/seed/schools.sample.json`）→ 下一步：各校专业复试线逐校核验替换（`school-tasks.json` 21 校）
 4. [ ] 地图省市聚合联调 + 真机定位测试
 5. [ ] 公告定时拉取（云函数定时触发器）
 6. [ ] 上架：类目选"教育-在线教育"，备好《信息来源说明》

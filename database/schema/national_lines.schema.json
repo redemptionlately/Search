@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "national_lines",
+  "description": "研考国家线（已核验真实数据，来源研招网）。一行 = (year, degreeType, category)，A/B区同行存放",
+  "type": "object",
+  "required": ["year", "degreeType", "category", "totalA", "totalB", "sourceUrl"],
+  "properties": {
+    "year": { "type": "integer" },
+    "degreeType": { "type": "string", "enum": ["学硕", "专硕", "统一"], "description": "2023分学硕专硕两张表，2024起统一一张表" },
+    "category": { "type": "string", "description": "学科门类，如 哲学/工学其他/工商管理" },
+    "sub": { "type": "string", "description": "细分行，如 教育[0451]类/工学照顾专业" },
+    "totalA": { "type": "number" },
+    "s100A": { "type": ["number", "null"], "description": "单科满分=100（政治/英语）" },
+    "s150A": { "type": ["number", "null"], "description": "单科满分>100（专业课/数学）" },
+    "totalB": { "type": "number" },
+    "s100B": { "type": ["number", "null"] },
+    "s150B": { "type": ["number", "null"] },
+    "sourceUrl": { "type": "string" }
+  }
+}

@@ -24,5 +24,6 @@ try {
   must(path.join(root, 'score_lines.sample.json'), ['schoolId', 'majorName', 'studyType', 'year', 'total', 'sourceUrl']);
   must(path.join(root, 'notices.sample.json'), ['id', 'schoolId', 'title', 'publishDate', 'url', 'category']);
   must(path.join(root, 'evaluations.sample.json'), ['schoolId', 'type', 'content', 'source']);
+  must(path.join(root, 'national_lines.json'), ['year', 'degreeType', 'category', 'totalA', 'totalB', 'sourceUrl']);
   console.log('[check] 全部通过');
 } catch (e) { console.error('[check] FAIL:', e.message); process.exit(1); }

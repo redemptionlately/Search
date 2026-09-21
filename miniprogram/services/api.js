@@ -6,11 +6,13 @@ let seedCache = null;
 function loadSeed() {
   if (seedCache) return seedCache;
   // seed 打包在 miniprogram/data/ 下（由 database/seed 同步而来，见 tools/sync-seed.js）
+  // 命名约定：*.sample.json = 示例数据（待替换）；national_lines.json = 已核验真实数据
   const schools = require('../data/schools.sample.json');
   const scores = require('../data/score_lines.sample.json');
   const notices = require('../data/notices.sample.json');
   const evaluations = require('../data/evaluations.sample.json');
-  seedCache = { schools, scores, notices, evaluations };
+  const national = require('../data/national_lines.json');
+  seedCache = { schools, scores, notices, evaluations, national };
   return seedCache;
 }
 
@@ -47,6 +49,13 @@ function seedFilter(fnName, params) {
     if (params.keyword) list = list.filter(x => x.title.includes(params.keyword));
     return list.sort((a, b) => (b.publishDate > a.publishDate ? 1 : -1));
   }
+  if (fnName === 'national') {
+    let list = s.national;
+    if (params.year) list = list.filter(x => x.year === params.year);
+    if (params.degreeType) list = list.filter(x => x.degreeType === params.degreeType);
+    if (params.category) list = list.filter(x => x.category === params.category);
+    return list;
+  }
   return [];
 }
 
@@ -74,5 +83,9 @@ module.exports = {
   async getNotices(params = {}) {
     try { return await callFn('notices', { action: 'list', ...params }); }
     catch (e) { return seedFilter('notices', params); }
+  },
+  async getNationalLines(params = {}) {
+    try { return await callFn('scores', { action: 'national', ...params }); }
+    catch (e) { return seedFilter('national', params); }
   }
 };
