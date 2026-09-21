@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "考研查分",
+  "usingComponents": {
+    "school-card": "../../components/school-card/index",
+    "notice-card": "../../components/notice-card/index"
+  }
+}

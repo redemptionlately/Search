@@ -1,0 +1,30 @@
+<view wx:if="{{school}}" class="card">
+  <view class="title">{{school.name}}</view>
+  <view class="muted">{{school.province}} {{school.city}} · {{school.level}} {{school.is985 ? '· 985' : ''}}{{school.is211 ? '· 211' : ''}}{{school.isDoubleFirst ? '· 双一流' : ''}}</view>
+  <view style="margin-top:8rpx;"><text class="tag">{{trendText}}</text></view>
+  <view class="muted">{{school.intro}}</view>
+</view>
+<view wx:if="{{school}}" class="card">
+  <view class="title" style="font-size:30rpx;">专业复试线（近三年）</view>
+  <block wx:for="{{scores}}" wx:key="*this">
+    <view bindtap="goMajor" data-major="{{item.majorName}}" data-code="{{item.majorCode}}" style="padding:12rpx 0;border-bottom:1rpx solid #f0f0f0;">
+      <text>{{item.majorName}}（{{item.studyType}}） {{item.year }}年：{{item.total}}分</text>
+      <text class="muted"> ›</text>
+    </view>
+  </block>
+</view>
+<view wx:if="{{school}}" class="card">
+  <view class="title" style="font-size:30rpx;">涨跌原因 · 学校评价</view>
+  <block wx:for="{{evaluations}}" wx:key="*this">
+    <view style="margin-top:8rpx;"><text class="tag">{{item.type === 'trend_reason' ? '原因' : '评价'}}</text>
+    <text>{{item.content}}</text><view class="muted">来源：{{item.source}}</view></view>
+  </block>
+  <view wx:if="{{!evaluations.length}}" class="muted">暂无公开说明，以官网为准</view>
+</view>
+<view wx:if="{{school}}" class="card">
+  <view class="title" style="font-size:30rpx;">学院公告</view>
+  <block wx:for="{{notices}}" wx:key="id">
+    <notice-card notice="{{item}}" />
+  </block>
+</view>
+<view wx:if="{{!school}}" class="card"><view class="muted">未找到该学校（id={{id}}），返回重试</view></view>

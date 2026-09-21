@@ -1,0 +1,20 @@
+<view class="card">
+  <view style="display:flex;gap:12rpx;align-items:center;">
+    <picker mode="selector" range="{{provinces}}" bindchange="pickProvince"><view class="tag">{{curProvince || '选省'}}</view></picker>
+    <input placeholder="市（如：武汉市）" bindconfirm="pickCity" style="border:1rpx solid #eee;border-radius:8rpx;padding:8rpx;flex:1;" />
+    <view class="tag" bindtap="reset">全国</view>
+  </view>
+  <view class="muted">{{tip}} · 当前：{{curProvince}}{{curCity}}（{{level}}级，{{schools.length}}校）</view>
+</view>
+<!-- 真机用 <map>；开发者工具无 key 时用气泡列表兜底 -->
+<map latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}" markers="{{markers}}" bindregionchange="onRegionChange" bindmarkertap="onMarkerTap" show-location style="width:100%;height:520rpx;" />
+<view class="card">
+  <view class="title" style="font-size:30rpx;">聚合</view>
+  <view><block wx:for="{{bubbles}}" wx:key="name"><text class="tag">{{item.name}} {{item.count}}校 </text></block></view>
+</view>
+<view class="card">
+  <view class="title" style="font-size:30rpx;">本级院校（{{schools.length}}）</view>
+  <block wx:for="{{schools}}" wx:key="schoolId">
+    <school-card school="{{item}}" bindtap="goSchool" data-id="{{item.schoolId}}" />
+  </block>
+</view>

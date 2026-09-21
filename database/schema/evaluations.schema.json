@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "evaluations",
+  "description": "涨跌原因 + 学校评价，必须带来源",
+  "type": "object",
+  "required": ["schoolId", "type", "content", "source"],
+  "properties": {
+    "schoolId": { "type": "string" },
+    "majorCode": { "type": ["string", "null"] },
+    "type": { "type": "string", "enum": ["trend_reason", "school_review"] },
+    "content": { "type": "string" },
+    "source": { "type": "string" }
+  }
+}

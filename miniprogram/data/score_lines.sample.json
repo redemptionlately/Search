@@ -1,0 +1,8 @@
+[
+  { "schoolId": "10487", "majorCode": "081200", "majorName": "计算机科学与技术", "studyType": "学硕", "year": 2023, "total": 320, "politics": 50, "english": 50, "mathOrPro": 80, "minAdmit": 325, "avgAdmit": 345, "planCount": 120, "reason": "示例：扩招+数学难度回落", "sourceUrl": "https://example.edu.cn/2023" },
+  { "schoolId": "10487", "majorCode": "081200", "majorName": "计算机科学与技术", "studyType": "学硕", "year": 2024, "total": 335, "politics": 50, "english": 50, "mathOrPro": 80, "minAdmit": 340, "avgAdmit": 358, "planCount": 110, "reason": "示例：报考人数上涨，缩招10人", "sourceUrl": "https://example.edu.cn/2024" },
+  { "schoolId": "10487", "majorCode": "081200", "majorName": "计算机科学与技术", "studyType": "学硕", "year": 2025, "total": 328, "politics": 50, "english": 50, "mathOrPro": 75, "minAdmit": 331, "avgAdmit": 350, "planCount": 125, "reason": "示例：专硕分流+扩招15人", "sourceUrl": "https://example.edu.cn/2025" },
+  { "schoolId": "10486", "majorCode": "081200", "majorName": "计算机科学与技术", "studyType": "学硕", "year": 2023, "total": 310, "politics": 50, "english": 50, "mathOrPro": 75, "minAdmit": 315, "avgAdmit": 335, "planCount": 90, "reason": "", "sourceUrl": "https://example.edu.cn/whu2023" },
+  { "schoolId": "10486", "majorCode": "081200", "majorName": "计算机科学与技术", "studyType": "学硕", "year": 2024, "total": 322, "politics": 50, "english": 50, "mathOrPro": 75, "minAdmit": 330, "avgAdmit": 348, "planCount": 85, "reason": "示例：热门方向报录比升高", "sourceUrl": "https://example.edu.cn/whu2024" },
+  { "schoolId": "10486", "majorCode": "081200", "majorName": "计算机科学与技术", "studyType": "学硕", "year": 2025, "total": 318, "politics": 50, "english": 50, "mathOrPro": 75, "minAdmit": 320, "avgAdmit": 342, "planCount": 95, "reason": "", "sourceUrl": "https://example.edu.cn/whu2025" }
+]

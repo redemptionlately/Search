@@ -1,0 +1,13 @@
+{
+  "name": "kaoyan-search",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "check": "node tools/check-seed.js",
+    "sync:seed": "node tools/sync-seed.js",
+    "crawl:national": "node tools/fetch-national-line.js",
+    "crawl:schools": "node tools/fetch-school-lines.js",
+    "parse:notices": "node tools/parse-notices.js",
+    "geo:build": "node tools/geo-build.js"
+  }
+}

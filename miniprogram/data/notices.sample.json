@@ -1,0 +1,5 @@
+[
+  { "id": "n1", "schoolId": "10487", "schoolName": "华中科技大学", "college": "计算机学院", "title": "计算机学院2025年硕士复试线公示（示例）", "publishDate": "2025-03-15", "url": "https://example.edu.cn/notice1", "category": "复试线" },
+  { "id": "n2", "schoolId": "10486", "schoolName": "武汉大学", "college": "研究生院", "title": "2025年硕士招生调剂公告（示例）", "publishDate": "2025-04-02", "url": "https://example.edu.cn/notice2", "category": "调剂" },
+  { "id": "n3", "schoolId": "10335", "schoolName": "浙江大学", "college": "研究生院", "title": "2026年招生简章（示例）", "publishDate": "2025-09-01", "url": "https://example.edu.cn/notice3", "category": "招生简章" }
+]

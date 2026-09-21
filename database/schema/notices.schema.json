@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "notices",
+  "description": "学院公告（只存标题+链接+日期）",
+  "type": "object",
+  "required": ["id", "schoolId", "title", "publishDate", "url", "category"],
+  "properties": {
+    "id": { "type": "string" },
+    "schoolId": { "type": "string" },
+    "schoolName": { "type": "string" },
+    "college": { "type": "string" },
+    "title": { "type": "string" },
+    "publishDate": { "type": "string" },
+    "url": { "type": "string" },
+    "category": { "type": "string", "enum": ["复试线", "调剂", "招生简章", "录取名单", "考试大纲"] }
+  }
+}

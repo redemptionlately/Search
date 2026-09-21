@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "专业分数线",
+  "usingComponents": { "score-trend": "../../components/score-trend/index" }
+}

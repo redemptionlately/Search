@@ -1,0 +1,32 @@
+[
+  {
+    "schoolId": "10001",
+    "name": "北京大学",
+    "yjsy": "https://admission.pku.edu.cn/"
+  },
+  {
+    "schoolId": "10003",
+    "name": "清华大学",
+    "yjsy": "https://yz.tsinghua.edu.cn/"
+  },
+  {
+    "schoolId": "10335",
+    "name": "浙江大学",
+    "yjsy": "https://grs.zju.edu.cn/"
+  },
+  {
+    "schoolId": "10486",
+    "name": "武汉大学",
+    "yjsy": "https://gs.whu.edu.cn/"
+  },
+  {
+    "schoolId": "10487",
+    "name": "华中科技大学",
+    "yjsy": "https://gs.hust.edu.cn/"
+  },
+  {
+    "schoolId": "10246",
+    "name": "复旦大学",
+    "yjsy": "https://gs.fudan.edu.cn/"
+  }
+]

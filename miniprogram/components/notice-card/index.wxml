@@ -1,0 +1,4 @@
+<view bindtap="open" style="padding:12rpx 0;border-bottom:1rpx solid #f3f4f6;">
+  <view><text class="tag">{{notice.category}}</text> {{notice.title}}</view>
+  <view class="muted">{{notice.schoolName || notice.schoolId}} · {{notice.college}} · {{notice.publishDate}}</view>
+</view>

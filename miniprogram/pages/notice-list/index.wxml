@@ -1,0 +1,11 @@
+<view class="card">
+  <input placeholder="搜公告（如：复试线/调剂）" bindinput="onInput" bindconfirm="load" style="border:1rpx solid #ddd;border-radius:8rpx;padding:12rpx;" />
+  <view style="margin-top:12rpx;"><picker mode="selector" range="{{cats}}" bindchange="pickCat"><view class="tag">{{category || '全部分类'}}</view></picker></view>
+</view>
+<view class="card">
+  <view class="title" style="font-size:30rpx;">公告（{{list.length}}）</view>
+  <block wx:for="{{list}}" wx:key="id">
+    <notice-card notice="{{item}}" />
+  </block>
+  <view wx:if="{{!list.length}}" class="muted">暂无公告</view>
+</view>

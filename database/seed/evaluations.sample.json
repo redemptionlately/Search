@@ -1,0 +1,5 @@
+[
+  { "schoolId": "10487", "majorCode": "081200", "type": "trend_reason", "content": "示例：2024年缩招10人+报考+18%，复试线上涨15分；2025年扩招后回落。需以官网核验为准。", "source": "人工整理示例" },
+  { "schoolId": "10487", "majorCode": null, "type": "school_review", "content": "示例：工科强校，就业导向强，华中地区计算机首选之一；复试重视机试与项目。", "source": "学生口碑示例" },
+  { "schoolId": "10486", "majorCode": null, "type": "school_review", "content": "示例：综合声誉好，武汉区位优，跨考友好度中等，复试公平性口碑较好。", "source": "学生口碑示例" }
+]

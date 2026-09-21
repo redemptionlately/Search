@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "查学校查专业",
+  "usingComponents": { "school-card": "../../components/school-card/index" }
+}

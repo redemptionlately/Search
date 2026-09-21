@@ -1,0 +1,21 @@
+{
+  "desc": "考研查分小程序 sitemap，管理微信搜索收录",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "pages/home/*"
+    },
+    {
+      "action": "allow",
+      "page": "pages/search-normal/*"
+    },
+    {
+      "action": "allow",
+      "page": "pages/map-explore/*"
+    },
+    {
+      "action": "disallow",
+      "page": "*"
+    }
+  ]
+}

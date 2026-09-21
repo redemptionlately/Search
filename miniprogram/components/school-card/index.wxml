@@ -1,0 +1,4 @@
+<view style="padding:16rpx 0;border-bottom:1rpx solid #f3f4f6;">
+  <view style="font-weight:600;">{{school.name}}</view>
+  <view class="muted">{{school.province}} {{school.city}} · {{school.level}}<text wx:if="{{school.is985}}"> · 985</text><text wx:if="{{school.is211}}"> · 211</text></view>
+</view>

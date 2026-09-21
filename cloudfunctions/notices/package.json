@@ -1,0 +1,4 @@
+{
+  "name": "notices",
+  "dependencies": { "wx-server-sdk": "~3.0.0" }
+}

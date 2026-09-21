@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "score_lines",
+  "description": "院校/专业复试线，一条 = (schoolId, majorCode, studyType, year)",
+  "type": "object",
+  "required": ["schoolId", "majorName", "studyType", "year", "total", "sourceUrl"],
+  "properties": {
+    "schoolId": { "type": "string" },
+    "majorCode": { "type": ["string", "null"] },
+    "majorName": { "type": "string" },
+    "studyType": { "type": "string", "enum": ["学硕", "专硕"] },
+    "year": { "type": "integer", "minimum": 2020 },
+    "total": { "type": "number" },
+    "politics": { "type": ["number", "null"] },
+    "english": { "type": ["number", "null"] },
+    "mathOrPro": { "type": ["number", "null"] },
+    "minAdmit": { "type": ["number", "null"], "description": "录取最低分" },
+    "avgAdmit": { "type": ["number", "null"] },
+    "planCount": { "type": ["number", "null"], "description": "招生计划数" },
+    "reason": { "type": "string", "description": "涨跌原因，无公开说明则留空" },
+    "sourceUrl": { "type": "string", "description": "官网来源链接，必填" }
+  }
+}

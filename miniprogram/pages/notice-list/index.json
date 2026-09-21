@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "学院公告",
+  "usingComponents": { "notice-card": "../../components/notice-card/index" }
+}

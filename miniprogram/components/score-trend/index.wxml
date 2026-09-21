@@ -1,0 +1,11 @@
+<!-- 轻量趋势条：无第三方依赖版，后期可换 echarts-for-weixin -->
+<view style="display:flex;align-items:flex-end;gap:12rpx;height:160rpx;margin-top:12rpx;">
+  <block wx:for="{{lines}}" wx:key="year">
+    <view style="flex:1;text-align:center;">
+      <view class="muted">{{item.total}}分</view>
+      <view style="background:#1A56DB;border-radius:8rpx;height:{{item.total ? (item.total - 250) : 8}}rpx;min-height:16rpx;max-height:110rpx;"></view>
+      <view class="muted">{{item.year}}</view>
+    </view>
+  </block>
+</view>
+<view wx:if="{{!lines.length}}" class="muted">暂无趋势数据</view>

@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "schools",
+  "description": "考研院校（含地图坐标，GCJ-02）",
+  "type": "object",
+  "required": ["schoolId", "name", "province", "city", "lng", "lat"],
+  "properties": {
+    "schoolId": { "type": "string", "description": "教育部院校代码，如 10001" },
+    "name": { "type": "string" },
+    "province": { "type": "string" },
+    "city": { "type": "string" },
+    "county": { "type": "string" },
+    "lng": { "type": "number", "description": "GCJ-02 经度" },
+    "lat": { "type": "number", "description": "GCJ-02 纬度" },
+    "level": { "type": "string", "enum": ["985", "211", "双一流", "普通本科", "专科"] },
+    "is985": { "type": "boolean" },
+    "is211": { "type": "boolean" },
+    "isDoubleFirst": { "type": "boolean" },
+    "intro": { "type": "string" }
+  }
+}

@@ -1,0 +1,24 @@
+<view class="card">
+  <view class="title">考研查分 · 近三年复试线</view>
+  <view class="muted">选一种方式开始：地图找学校，或直接搜索学校/专业</view>
+  <view style="display:flex;gap:16rpx;margin-top:20rpx;">
+    <view class="btn-primary" style="flex:1;" bindtap="goMap">地图模式</view>
+    <view class="btn-ghost" style="flex:1;" bindtap="goSearch">常规模式</view>
+  </view>
+</view>
+<view class="card">
+  <view class="title" style="font-size:30rpx;">热门院校</view>
+  <block wx:for="{{hotSchools}}" wx:key="schoolId">
+    <school-card school="{{item}}" bindtap="goSchool" data-id="{{item.schoolId}}" />
+  </block>
+</view>
+<view class="card">
+  <view class="title" style="font-size:30rpx;">最新学院公告</view>
+  <block wx:for="{{hotNotices}}" wx:key="id">
+    <notice-card notice="{{item}}" />
+  </block>
+</view>
+<view wx:if="{{showPrivacy}}" style="position:fixed;bottom:0;left:0;right:0;background:#fff;padding:24rpx;border-top:1rpx solid #eee;">
+  <view class="muted">我们仅用于展示分数线与公告链接，搜索历史只存本机。继续使用即代表同意《用户协议与隐私说明》。</view>
+  <view class="btn-primary" bindtap="agreePrivacy" style="margin-top:16rpx;">同意并继续</view>
+</view>

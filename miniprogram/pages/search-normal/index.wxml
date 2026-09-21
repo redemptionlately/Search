@@ -1,0 +1,16 @@
+<view class="card">
+  <input placeholder="搜学校 / 专业（如：计算机）" value="{{keyword}}" bindinput="onInput" bindconfirm="doSearch" style="border:1rpx solid #ddd;border-radius:8rpx;padding:12rpx;" />
+  <view style="display:flex;gap:12rpx;margin-top:12rpx;">
+    <picker mode="selector" range="{{provinces}}" bindchange="pickP"><view class="tag">{{province || '省份'}}</view></picker>
+    <picker mode="selector" range="{{studyTypes}}" bindchange="pickT"><view class="tag">{{studyType || '学硕/专硕'}}</view></picker>
+    <view class="btn-primary" bindtap="doSearch" style="flex:1;padding:10rpx;">搜索</view>
+  </view>
+  <view class="muted" style="margin-top:8rpx;">历史：<block wx:for="{{history}}" wx:key="*this"><text class="tag">{{item}} </text></block><text bindtap="clearHistory">清空</text></view>
+</view>
+<view class="card">
+  <view class="title" style="font-size:30rpx;">结果（{{results.length}}）</view>
+  <block wx:for="{{results}}" wx:key="schoolId">
+    <school-card school="{{item}}" bindtap="goSchool" data-id="{{item.schoolId}}" />
+  </block>
+  <view wx:if="{{!results.length}}" class="muted">无结果，换关键词或清空筛选试试</view>
+</view>

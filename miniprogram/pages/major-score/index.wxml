@@ -1,0 +1,17 @@
+<view class="card">
+  <view class="muted">{{school.name}}</view>
+  <view class="title">{{majorName}}</view>
+  <view><text class="tag">{{trendText}}</text></view>
+  <score-trend lines="{{lines}}" />
+</view>
+<view class="card">
+  <view class="title" style="font-size:30rpx;">近三年复试线</view>
+  <block wx:for="{{lines}}" wx:key="year">
+    <view style="padding:12rpx 0;border-bottom:1rpx solid #f0f0f0;" bindtap="copySource" data-url="{{item.sourceUrl}}">
+      <text>{{item.year}} · {{item.studyType}} · 总分 {{item.total}}（政{{item.politics}}/外{{item.english}}/专{{item.mathOrPro}}）</text>
+      <view class="muted">录取最低{{item.minAdmit}} / 平均{{item.avgAdmit}} · 招生{{item.planCount}}人 · 点击复制来源</view>
+      <view class="muted" wx:if="{{item.reason}}">变动原因：{{item.reason}}</view>
+    </view>
+  </block>
+  <view wx:if="{{!lines.length}}" class="muted">暂无该专业分数线，以官网为准</view>
+</view>

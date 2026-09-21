@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/map-explore/index",
+    "pages/search-normal/index",
+    "pages/school-detail/index",
+    "pages/major-score/index",
+    "pages/notice-list/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1A56DB",
+    "navigationBarTitleText": "考研查分",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#6B7280",
+    "selectedColor": "#1A56DB",
+    "list": [
+      { "pagePath": "pages/home/index", "text": "首页" },
+      { "pagePath": "pages/map-explore/index", "text": "地图" },
+      { "pagePath": "pages/search-normal/index", "text": "查分" },
+      { "pagePath": "pages/notice-list/index", "text": "公告" }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
