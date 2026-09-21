@@ -1,12 +1,14 @@
-// pages/map-explore — 地图模式：省->市->区县下钻 + 院校 marker
+// pages/map-explore — 地图模式：省->市两级 picker 下钻 + 院校 marker
 const api = require('../../services/api.js');
 const geo = require('../../utils/geo.js');
-const { PROVINCES } = require('../../utils/constants.js');
+const REGIONS = require('../../data/regions.json');
+const PROVINCES = Object.keys(REGIONS);
 Page({
   data: {
     scale: 4, level: 'country', latitude: 35.0, longitude: 105.0,
-    provinces: PROVINCES, curProvince: '', curCity: '',
-    bubbles: [], markers: [], schools: [], tip: '左右滑动缩放，下钻到市可看到院校'
+    provinces: PROVINCES, cities: [],
+    provIdx: -1, cityIdx: -1, curProvince: '', curCity: '',
+    bubbles: [], markers: [], schools: [], tip: '先选省，再选市，放大到市级可见院校定位'
   },
   async onLoad() { await this.reload(); },
   async reload() {
@@ -18,19 +20,24 @@ Page({
     this.setData({ schools, bubbles: agg.bubbles, markers: agg.markers });
   },
   onRegionChange(e) {
-    // map 缩放结束时按 scale 判定层级（machine demo 简化：手动按钮也可切换）
     const scale = (e.detail && e.detail.scale) || this.data.scale;
     this.setData({ scale, level: geo.levelForScale(scale) }, () => this.reload());
   },
   pickProvince(e) {
-    this.setData({ curProvince: e.detail.value, curCity: '', level: 'province', scale: 7 }, () => this.reload());
+    const i = Number(e.detail.value);
+    const prov = PROVINCES[i];
+    this.setData({
+      provIdx: i, cityIdx: -1, curProvince: prov, curCity: '',
+      cities: REGIONS[prov] || [], level: 'province', scale: 7
+    }, () => this.reload());
   },
   pickCity(e) {
-    const city = e.detail.value;
-    this.setData({ curCity: city, level: 'city', scale: 10 }, () => this.reload());
+    const i = Number(e.detail.value);
+    const city = (this.data.cities || [])[i] || '';
+    this.setData({ cityIdx: i, curCity: city, level: 'city', scale: 10 }, () => this.reload());
   },
   reset() {
-    this.setData({ curProvince: '', curCity: '', level: 'country', scale: 4 }, () => this.reload());
+    this.setData({ provIdx: -1, cityIdx: -1, curProvince: '', curCity: '', cities: [], level: 'country', scale: 4 }, () => this.reload());
   },
   goSchool(e) { wx.navigateTo({ url: `/pages/school-detail/index?id=${e.currentTarget.dataset.id}` }); },
   onMarkerTap(e) {

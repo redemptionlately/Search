@@ -10,7 +10,8 @@
 
 ## 2. 建集合（数据库 → 添加集合）
 
-` schools / score_lines / national_lines / notices / evaluations`，字段按 `database/schema/*.schema.json`。
+` schools / score_lines / national_lines / notices / evaluations / notice_sources`，字段按 `database/schema/*.schema.json`。
+`notice_sources` 结构：`{schoolId, schoolName, college, listUrl, enabled}`，模板用 `npm run seed:sources` 生成后导入。
 
 索引建议：
 - `score_lines`：`schoolId + majorCode + year`、`schoolId + studyType + year`
@@ -24,6 +25,12 @@
 - 开发期：`database/seed/*.sample.json` 直接导入（示例数据）
 - 正式：`tools/` 跑出 `database/_incoming/*.json`，人工核验 `sourceUrl` 后导入
 - >1MB 的 geo/图片放云存储，不进数据库
+
+## 4. 公告定时拉取
+
+1. 上传 `cloudfunctions/notice-fetcher` 并部署（`config.json` 已配每周一 08:00 定时触发）
+2. 导入 `notice_sources`（`npm run seed:sources` 生成模板，核对各校栏目 URL 后导入）
+3. 抓取只存标题+链接+日期，正文跳官网；GBK 站点自动跳过记日志；`autoFetched: true` 标记待人工抽查
 
 ## 4. 备选方案
 

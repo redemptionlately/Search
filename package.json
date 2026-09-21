@@ -8,6 +8,7 @@
     "crawl:national": "node tools/fetch-national-line.js",
     "crawl:schools": "node tools/fetch-school-lines.js",
     "parse:notices": "node tools/parse-notices.js",
+    "seed:sources": "node tools/seed-notice-sources.js",
     "geo:build": "node tools/geo-build.js"
   }
 }

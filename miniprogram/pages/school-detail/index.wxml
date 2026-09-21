@@ -9,6 +9,7 @@
   <block wx:for="{{scores}}" wx:key="*this">
     <view bindtap="goMajor" data-major="{{item.majorName}}" data-code="{{item.majorCode}}" style="padding:12rpx 0;border-bottom:1rpx solid #f0f0f0;">
       <text>{{item.majorName}}（{{item.studyType}}） {{item.year }}年：{{item.total}}分</text>
+      <text wx:if="{{item.verified === false}}" class="muted">（示例）</text>
       <text class="muted"> ›</text>
     </view>
   </block>

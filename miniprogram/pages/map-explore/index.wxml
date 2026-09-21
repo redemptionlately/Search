@@ -1,7 +1,7 @@
 <view class="card">
   <view style="display:flex;gap:12rpx;align-items:center;">
     <picker mode="selector" range="{{provinces}}" bindchange="pickProvince"><view class="tag">{{curProvince || '选省'}}</view></picker>
-    <input placeholder="市（如：武汉市）" bindconfirm="pickCity" style="border:1rpx solid #eee;border-radius:8rpx;padding:8rpx;flex:1;" />
+    <picker mode="selector" range="{{cities}}" bindchange="pickCity"><view class="tag">{{curCity || '选市'}}</view></picker>
     <view class="tag" bindtap="reset">全国</view>
   </view>
   <view class="muted">{{tip}} · 当前：{{curProvince}}{{curCity}}（{{level}}级，{{schools.length}}校）</view>

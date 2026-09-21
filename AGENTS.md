@@ -102,7 +102,7 @@ npm run check            # JSON schema 校验 seed + _incoming
 
 1. [ ] 云开发环境 + 集合建成（按 docs/CLOUD_DB_SETUP.md，新增 `national_lines` 集合）
 2. [x] 国家线 2023-2025 入库（`database/seed/national_lines.json`，研招网已核验，`pages/national-line` 可查同比涨跌）
-3. [x] 21 所热门院校基础信息（含坐标，`database/seed/schools.sample.json`）→ 下一步：各校专业复试线逐校核验替换（`school-tasks.json` 21 校）
-4. [ ] 地图省市聚合联调 + 真机定位测试
-5. [ ] 公告定时拉取（云函数定时触发器）
+3. [x] 21 所热门院校基础信息（含坐标）→ 专业复试线逐校核验中：武大2025计算机3行（研招网官方PDF）、华科2024学硕370（第三方整理）、中农2025会计230（官网）已入库并标 `verified`；其余仍为示例（前端标“示例”）
+4. [x] 地图省市聚合：`database/seed/regions.json` 34省级三级名单，省市 picker 联动 + markers；真机定位测试待你用开发者工具真机预览做
+5. [x] 公告定时拉取：`cloudfunctions/notice-fetcher`（每周一08:00）+ `notice_sources` 模板已就绪，待云环境部署启用
 6. [ ] 上架：类目选"教育-在线教育"，备好《信息来源说明》

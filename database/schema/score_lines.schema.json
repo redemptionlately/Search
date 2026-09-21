@@ -18,6 +18,7 @@
     "avgAdmit": { "type": ["number", "null"] },
     "planCount": { "type": ["number", "null"], "description": "招生计划数" },
     "reason": { "type": "string", "description": "涨跌原因，无公开说明则留空" },
-    "sourceUrl": { "type": "string", "description": "官网来源链接，必填" }
+    "sourceUrl": { "type": "string", "description": "官网来源链接，必填" },
+    "verified": { "type": "boolean", "description": "是否经官网核验；false=示例数据，前端须标示例" }
   }
 }

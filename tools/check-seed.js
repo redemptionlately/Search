@@ -25,5 +25,9 @@ try {
   must(path.join(root, 'notices.sample.json'), ['id', 'schoolId', 'title', 'publishDate', 'url', 'category']);
   must(path.join(root, 'evaluations.sample.json'), ['schoolId', 'type', 'content', 'source']);
   must(path.join(root, 'national_lines.json'), ['year', 'degreeType', 'category', 'totalA', 'totalB', 'sourceUrl']);
+  const regions = JSON.parse(fs.readFileSync(path.join(root, 'regions.json'), 'utf8'));
+  const rkeys = Object.keys(regions);
+  if (rkeys.length < 34) throw new Error('regions.json 省级数量不足34');
+  console.log('[ok]', path.join(root, 'regions.json'), `(${rkeys.length}省级)`);
   console.log('[check] 全部通过');
 } catch (e) { console.error('[check] FAIL:', e.message); process.exit(1); }
