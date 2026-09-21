@@ -9,9 +9,11 @@
   <view class="title" style="font-size:30rpx;">近三年复试线</view>
   <block wx:for="{{lines}}" wx:key="year">
     <view style="padding:12rpx 0;border-bottom:1rpx solid #f0f0f0;" bindtap="copySource" data-url="{{item.sourceUrl}}">
-      <text>{{item.year}} · {{item.studyType}} · 总分 {{item.total}}（政{{item.politics}}/外{{item.english}}/专{{item.mathOrPro}}）</text>
-      <text wx:if="{{item.verified === false}}" class="tag">示例</text>
-      <text wx:if="{{item.verified !== false}}" class="tag">已核验</text>
+      <text>{{item.year}} · {{item.studyType}} · 总分 {{item.total}}</text>
+      <text wx:if="{{item.politics != null}}">（{{item.politics > 100 ? '管综' : '政'}}{{item.politics}}/外{{item.english}}<text wx:if="{{item.mathOrPro != null}}">/专{{item.mathOrPro}}</text>）</text>
+      <text wx:if="{{item.sourceUrl.indexOf('example.edu.cn') >= 0}}" class="tag">示例</text>
+      <text wx:elif="{{item.verified}}" class="tag">已核验</text>
+      <text wx:else class="tag">第三方整理</text>
       <view class="muted">录取最低{{item.minAdmit}} / 平均{{item.avgAdmit}} · 招生{{item.planCount}}人 · 点击复制来源</view>
       <view class="muted" wx:if="{{item.reason}}">变动原因：{{item.reason}}</view>
     </view>

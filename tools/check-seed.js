@@ -25,7 +25,7 @@ try {
   must(path.join(root, 'notices.sample.json'), ['id', 'schoolId', 'title', 'publishDate', 'url', 'category']);
   must(path.join(root, 'evaluations.sample.json'), ['schoolId', 'type', 'content', 'source']);
   must(path.join(root, 'national_lines.json'), ['year', 'degreeType', 'category', 'totalA', 'totalB', 'sourceUrl']);
-  // 核验库：必须全部 verified=true 且来源非示例域名
+  // 核验库：必填齐全；verified=false 必须带 reason 说明（第三方整理待复核）；来源禁示例域名
   const vfile = path.join(root, 'score_lines_verified.json');
   if (fs.existsSync(vfile)) {
     const arr = JSON.parse(fs.readFileSync(vfile, 'utf8'));
@@ -33,9 +33,12 @@ try {
       for (const k of ['schoolId', 'majorName', 'studyType', 'year', 'total', 'sourceUrl']) {
         if (o[k] === undefined || o[k] === null || o[k] === '') throw new Error(`score_lines_verified.json[${i}] 缺字段 ${k}`);
       }
+      if (typeof o.verified !== 'boolean') throw new Error(`score_lines_verified.json[${i}] 缺 verified 标记`);
       if (/example\.edu\.cn/.test(o.sourceUrl)) throw new Error(`score_lines_verified.json[${i}] 来源为示例域名`);
+      if (o.verified === false && !o.reason) throw new Error(`score_lines_verified.json[${i}] 第三方行缺 reason 说明`);
     }
-    console.log('[ok]', vfile, `(${arr.length}条已核验)`);
+    const t = arr.filter(o => o.verified).length;
+    console.log('[ok]', vfile, `(${arr.length}条，官网${t}条/第三方${arr.length - t}条)`);
   } else { console.log('[skip] score_lines_verified.json 暂无（等待核验数据）'); }
   const regions = JSON.parse(fs.readFileSync(path.join(root, 'regions.json'), 'utf8'));
   const rkeys = Object.keys(regions);
