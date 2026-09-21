@@ -25,6 +25,7 @@ try {
   must(path.join(root, 'notices.sample.json'), ['id', 'schoolId', 'title', 'publishDate', 'url', 'category']);
   must(path.join(root, 'evaluations.sample.json'), ['schoolId', 'type', 'content', 'source']);
   must(path.join(root, 'national_lines.json'), ['year', 'degreeType', 'category', 'totalA', 'totalB', 'sourceUrl']);
+  must(path.join(root, 'majors.json'), ['code', 'name', 'category', 'degreeType']);
   // 核验库：必填齐全；verified=false 必须带 reason 说明（第三方整理待复核）；来源禁示例域名
   const vfile = path.join(root, 'score_lines_verified.json');
   if (fs.existsSync(vfile)) {

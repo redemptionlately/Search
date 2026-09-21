@@ -4,6 +4,7 @@
     "pages/map-explore/index",
     "pages/search-normal/index",
     "pages/national-line/index",
+    "pages/major-pick/index",
     "pages/school-detail/index",
     "pages/major-score/index",
     "pages/notice-list/index"

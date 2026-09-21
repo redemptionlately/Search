@@ -15,7 +15,8 @@ function loadSeed() {
   const notices = require('../data/notices.sample.json');
   const evaluations = require('../data/evaluations.sample.json');
   const national = require('../data/national_lines.json');
-  seedCache = { schools, scores, notices, evaluations, national };
+  const majors = require('../data/majors.json');
+  seedCache = { schools, scores, notices, evaluations, national, majors };
   return seedCache;
 }
 
@@ -90,5 +91,14 @@ module.exports = {
   async getNationalLines(params = {}) {
     try { return await callFn('scores', { action: 'national', ...params }); }
     catch (e) { return seedFilter('national', params); }
+  },
+  async getMajors() {
+    try { return await callFn('scores', { action: 'majors' }); }
+    catch (e) { return loadSeed().majors || []; }
+  },
+  // 该专业全部的分数行（含示例+核验），供按专业查学校
+  async getAllScores() {
+    try { return await callFn('scores', { action: 'all' }); }
+    catch (e) { return loadSeed().scores || []; }
   }
 };

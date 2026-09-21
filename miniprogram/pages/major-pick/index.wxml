@@ -1,0 +1,30 @@
+<view class="card">
+  <view class="title">第一步：选学科门类</view>
+  <picker mode="selector" range="{{categories}}" bindchange="pickCat"><view class="tag">{{categories[catIdx] || '请选择'}} ▼</view></picker>
+</view>
+<view class="card">
+  <view class="title" style="font-size:30rpx;">第二步：选专业（只显示该专业）</view>
+  <view><block wx:for="{{majorList}}" wx:key="code">
+    <text class="tag" bindtap="pickMajor" data-idx="{{index}}" style="{{cur && cur.code === item.code ? 'background:#1A56DB;color:#fff;' : ''}}">{{item.name}} {{item.degreeType}}</text>
+  </block></view>
+</view>
+<view wx:if="{{cur}}" class="card">
+  <view class="title">{{cur.name}}（{{cur.code}} · {{cur.degreeType}}）</view>
+  <view class="muted">{{tip}}</view>
+</view>
+<view wx:if="{{cur}}" class="card">
+  <view class="title" style="font-size:30rpx;">2025 门类国家线（参考）</view>
+  <block wx:for="{{nationalRef}}" wx:key="*this">
+    <view class="muted">{{item.category}}{{item.sub ? '·' + item.sub : ''}}：A区{{item.totalA}} / B区{{item.totalB}}</view>
+  </block>
+</view>
+<view wx:if="{{cur}}" class="card">
+  <view class="title" style="font-size:30rpx;">有分数线的学校（{{schools.length}}）</view>
+  <block wx:for="{{schools}}" wx:key="id">
+    <view bindtap="goSchool" data-id="{{item.id}}" style="padding:12rpx 0;border-bottom:1rpx solid #f0f0f0;">
+      <text style="font-weight:600;">{{item.name}}</text>
+      <view class="muted"><block wx:for="{{item.lines}}" wx:key="*this"><text>{{item.year}}年{{item.total}}分 </text></block>›</view>
+    </view>
+  </block>
+  <view wx:if="{{!schools.length}}" class="muted">该专业学校线建设中，可先去“查分”按学校看，或看上面国家线</view>
+</view>

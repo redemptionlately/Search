@@ -19,6 +19,14 @@ exports.main = async (event) => {
       const r = await db.collection('national_lines').where(year ? { year } : {}).limit(100).get();
       return { ok: true, data: r.data };
     }
+    if (action === 'majors') {
+      const r = await db.collection('majors').limit(300).get();
+      return { ok: true, data: r.data };
+    }
+    if (action === 'all') {
+      const r = await db.collection('score_lines').orderBy('year', 'asc').limit(500).get();
+      return { ok: true, data: r.data };
+    }
     return { ok: false, error: 'unknown action' };
   } catch (e) { return { ok: false, error: String(e) }; }
 };

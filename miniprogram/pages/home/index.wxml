@@ -6,6 +6,7 @@
     <view class="btn-ghost" style="flex:1;" bindtap="goSearch">常规模式</view>
   </view>
   <view class="btn-ghost" style="margin-top:12rpx;" bindtap="goNational">查国家线（2023-2025 · 含同比涨跌）</view>
+  <view class="btn-ghost" style="margin-top:12rpx;" bindtap="goMajor">先选专业：只看该专业的学校和线</view>
 </view>
 <view class="card">
   <view class="title" style="font-size:30rpx;">热门院校</view>

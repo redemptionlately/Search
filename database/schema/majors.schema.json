@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "majors",
+  "description": "全国研究生专业目录（教育部2022版学科专业目录整理，已核验的静态标准数据）",
+  "type": "object",
+  "required": ["code", "name", "category", "degreeType"],
+  "properties": {
+    "code": { "type": "string", "description": "4位学硕一级学科码 / 4位专硕类别码" },
+    "name": { "type": "string" },
+    "category": { "type": "string", "description": "所属学科门类：14门类之一" },
+    "degreeType": { "type": "string", "enum": ["学硕", "专硕"] }
+  }
+}
