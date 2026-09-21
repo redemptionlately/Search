@@ -25,6 +25,18 @@ try {
   must(path.join(root, 'notices.sample.json'), ['id', 'schoolId', 'title', 'publishDate', 'url', 'category']);
   must(path.join(root, 'evaluations.sample.json'), ['schoolId', 'type', 'content', 'source']);
   must(path.join(root, 'national_lines.json'), ['year', 'degreeType', 'category', 'totalA', 'totalB', 'sourceUrl']);
+  // 核验库：必须全部 verified=true 且来源非示例域名
+  const vfile = path.join(root, 'score_lines_verified.json');
+  if (fs.existsSync(vfile)) {
+    const arr = JSON.parse(fs.readFileSync(vfile, 'utf8'));
+    for (const [i, o] of arr.entries()) {
+      for (const k of ['schoolId', 'majorName', 'studyType', 'year', 'total', 'sourceUrl']) {
+        if (o[k] === undefined || o[k] === null || o[k] === '') throw new Error(`score_lines_verified.json[${i}] 缺字段 ${k}`);
+      }
+      if (/example\.edu\.cn/.test(o.sourceUrl)) throw new Error(`score_lines_verified.json[${i}] 来源为示例域名`);
+    }
+    console.log('[ok]', vfile, `(${arr.length}条已核验)`);
+  } else { console.log('[skip] score_lines_verified.json 暂无（等待核验数据）'); }
   const regions = JSON.parse(fs.readFileSync(path.join(root, 'regions.json'), 'utf8'));
   const rkeys = Object.keys(regions);
   if (rkeys.length < 34) throw new Error('regions.json 省级数量不足34');
