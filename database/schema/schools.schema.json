@@ -16,6 +16,7 @@
     "is985": { "type": "boolean" },
     "is211": { "type": "boolean" },
     "isDoubleFirst": { "type": "boolean" },
-    "intro": { "type": "string" }
+    "intro": { "type": "string" },
+    "geoNote": { "type": "string", "description": "approx=主校区近似坐标，需腾讯位置服务校准；exact=正门级可信" }
   }
 }

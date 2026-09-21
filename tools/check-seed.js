@@ -20,7 +20,7 @@ function must(file, keys) {
 
 try {
   const root = path.join(__dirname, '..', 'database', 'seed');
-  must(path.join(root, 'schools.sample.json'), ['schoolId', 'name', 'province', 'city', 'lng', 'lat']);
+  must(path.join(root, 'schools.json'), ['schoolId', 'name', 'province', 'city', 'lng', 'lat']);
   must(path.join(root, 'score_lines.sample.json'), ['schoolId', 'majorName', 'studyType', 'year', 'total', 'sourceUrl']);
   must(path.join(root, 'notices.sample.json'), ['id', 'schoolId', 'title', 'publishDate', 'url', 'category']);
   must(path.join(root, 'evaluations.sample.json'), ['schoolId', 'type', 'content', 'source']);

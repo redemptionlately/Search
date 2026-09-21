@@ -54,7 +54,7 @@ docs/                    # ARCHITECTURE / DATA_SOURCE / MAP_MODE / CLOUD_DB_SETU
 - 原因/评价：`evaluations` 集合，字段 `type: trend_reason|school_review`，必须带 `source`（官网/研招网/人工整理），禁止编造原因
 - 公告 `notices`：`schoolId, college, title, publishDate, url, category: 复试线/调剂/招生简章/录取名单`
 - 坐标：`schools` 的 `lng/lat` 必须 GCJ-02，`province/city/county` 三级标准名（按国家统计局）
-- 示例数据文件名一律 `*.sample.json`，正式数据走云开发导入，不进 git 大文件（>1MB 放云存储）
+- 学校名录 `database/seed/schools.json` 为真实目录数据（608 校 / 31 省，代码经研招网核对，坐标为 `approx` 近似，上线前用腾讯位置服务校准正门级）；示例数据文件名一律 `*.sample.json`，正式数据走云开发导入
 
 ## 5. 常用命令
 

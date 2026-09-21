@@ -7,7 +7,7 @@ function loadSeed() {
   if (seedCache) return seedCache;
   // seed 打包在 miniprogram/data/ 下（由 database/seed 同步而来，见 tools/sync-seed.js）
   // 命名约定：*.sample.json = 示例数据（待替换）；national_lines.json = 已核验真实数据
-  const schools = require('../data/schools.sample.json');
+  const schools = require('../data/schools.json');
   const sampleScores = require('../data/score_lines.sample.json');
   let verifiedScores = [];
   try { verifiedScores = require('../data/score_lines_verified.json'); } catch (e) { /* 核验库未到货前为空 */ }
