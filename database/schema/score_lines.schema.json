@@ -16,7 +16,10 @@
     "mathOrPro": { "type": ["number", "null"] },
     "minAdmit": { "type": ["number", "null"], "description": "录取最低分" },
     "avgAdmit": { "type": ["number", "null"] },
+    "maxAdmit": { "type": ["number", "null"], "description": "录取最高分" },
     "planCount": { "type": ["number", "null"], "description": "招生计划数" },
+    "retestCount": { "type": ["number", "null"], "description": "进入复试人数" },
+    "admitCount": { "type": ["number", "null"], "description": "实际录取人数" },
     "reason": { "type": "string", "description": "涨跌原因，无公开说明则留空" },
     "sourceUrl": { "type": "string", "description": "官网来源链接，必填" },
     "verified": { "type": "boolean", "description": "是否经官网核验；false=示例数据，前端须标示例" }
