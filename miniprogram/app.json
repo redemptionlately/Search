@@ -7,7 +7,8 @@
     "pages/major-pick/index",
     "pages/school-detail/index",
     "pages/major-score/index",
-    "pages/notice-list/index"
+    "pages/notice-list/index",
+    "pages/agreement/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,6 +16,7 @@
     "navigationBarTitleText": "考研查分",
     "navigationBarTextStyle": "white"
   },
+  "usePrivacyCheck": true,
   "tabBar": {
     "color": "#6B7280",
     "selectedColor": "#1A56DB",

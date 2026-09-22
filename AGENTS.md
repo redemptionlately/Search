@@ -106,3 +106,5 @@ npm run check            # JSON schema 校验 seed + _incoming
 4. [x] 地图省市聚合：`database/seed/regions.json` 34省级三级名单，省市 picker 联动 + markers；真机定位测试待你用开发者工具真机预览做
 5. [x] 公告定时拉取：`cloudfunctions/notice-fetcher`（每周一08:00）+ `notice_sources` 模板已就绪，待云环境部署启用
 6. [ ] 上架：类目选"教育-在线教育"，备好《信息来源说明》
+   - 按 `docs/SHELF_GUIDE.md` 走：注册账号(企业主体优先)→小程序备案→云开发+导数→隐私设置(勾选位置信息)→真机预览→提审
+   - 代码侧已就绪：`usePrivacyCheck` + `pages/agreement` 三件套 + 隐私弹窗

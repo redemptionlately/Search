@@ -1,0 +1,18 @@
+<view class="card">
+  <view class="title">用户协议</view>
+  <view class="muted">1. 本小程序提供考研分数线、国家线、院校信息与学院公告链接的查询展示服务，所有数据仅供参考，以各招生单位官网为准。</view>
+  <view class="muted">2. 标“示例/第三方整理”的数据未经官网核验，请勿作为报考唯一依据；标“已核验”的数据附来源链接，可自行核对。</view>
+  <view class="muted">3. 公告内容仅展示标题、日期与官网原文链接，正文请跳转官网阅读，版权归原发布单位所有。</view>
+  <view class="muted">4. 不得利用本小程序从事招生诈骗、倒卖数据等违法行为。</view>
+</view>
+<view class="card">
+  <view class="title">隐私说明</view>
+  <view class="muted">1. 我们收集的最少信息：搜索关键词与浏览记录仅保存在本机（wx.setStorageSync），不上传服务器；拒绝定位权限仍可手动选省市使用全部功能。</view>
+  <view class="muted">2. 位置权限仅用于地图模式展示院校位置（show-location），拒绝后可手动选择省份城市，不影响查分。</view>
+  <view class="muted">3. 我们不收集身份证、手机号、人脸等敏感信息，不设账号登录。如需删除本机数据，在微信中删除小程序即可清除。</view>
+  <view class="muted">4. 完整隐私保护指引以微信公众平台公示的《小程序隐私保护指引》为准，联系方式见小程序客服/意见入口。</view>
+</view>
+<view class="card">
+  <view class="title">信息来源说明（审核备查）</view>
+  <view class="muted">国家线：教育部经研招网（yz.chsi.com.cn）公布；院校复试线：各校研究生招生网/学院官网；录取统计：各校拟录取名单公示及招生章程；学校评价：教育部学科评估、软科公开排名、学生口碑（注明样本）。每条已核验数据均附 sourceUrl，可点击复制核对。</view>
+</view>

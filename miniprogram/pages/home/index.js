@@ -23,5 +23,6 @@ Page({
   goSearch() { wx.switchTab({ url: '/pages/search-normal/index' }); },
   goNational() { wx.switchTab({ url: '/pages/national-line/index' }); },
   goMajor() { wx.navigateTo({ url: '/pages/major-pick/index' }); },
+  goAgreement() { wx.navigateTo({ url: '/pages/agreement/index' }); },
   goSchool(e) { wx.navigateTo({ url: `/pages/school-detail/index?id=${e.currentTarget.dataset.id}` }); }
 });
