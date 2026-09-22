@@ -16,6 +16,8 @@
       <view class="muted" wx:if="{{item.politics != null}}">单科：{{item.politics > 100 ? '管综' : '政'}}{{item.politics}}/外{{item.english}}<text wx:if="{{item.mathOrPro != null}}">/专一{{item.mathOrPro}}</text><text wx:if="{{item.pro2 != null}}">/专二{{item.pro2}}</text></view>
       <view class="muted" wx:if="{{item.planCount != null || item.retestCount != null || item.admitCount != null}}">计划{{item.planCount || '?'}}人<text wx:if="{{item.retestCount != null}}"> · 进复试{{item.retestCount}}人</text><text wx:if="{{item.admitCount != null}}"> · 录取{{item.admitCount}}人</text></view>
       <view class="muted" wx:if="{{item.minAdmit != null || item.maxAdmit != null || item.avgAdmit != null}}">录取分：<text wx:if="{{item.minAdmit != null}}">最低{{item.minAdmit}} </text><text wx:if="{{item.maxAdmit != null}}">最高{{item.maxAdmit}} </text><text wx:if="{{item.avgAdmit != null}}">平均{{item.avgAdmit}}</text></view>
+      <view class="muted" wx:if="{{item.admitBands}}">分数段：{{item.admitBands}}</view>
+      <view class="muted" wx:if="{{item.subjectAvg}}">各科均分：{{item.subjectAvg}}</view>
       <view class="muted" wx:if="{{item.reason}}">变动原因：{{item.reason}}</view>
       <view class="muted">点复制来源链接</view>
     </view>

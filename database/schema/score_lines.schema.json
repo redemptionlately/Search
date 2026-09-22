@@ -22,6 +22,8 @@
     "retestCount": { "type": ["number", "null"], "description": "进入复试人数" },
     "admitCount": { "type": ["number", "null"], "description": "实际录取人数" },
     "statSource": { "type": "string", "description": "录取统计来源（拟录取名单公示链接），与 sourceUrl（分数线来源）区分" },
+    "admitBands": { "type": ["string", "null"], "description": "录取分数段分布聚合，如 400+:5人;390-399:12人（禁个人名单）" },
+    "subjectAvg": { "type": ["string", "null"], "description": "录取者各科平均分聚合，如 政68/英75/数120/专业125" },
     "reason": { "type": "string", "description": "涨跌原因，无公开说明则留空" },
     "sourceUrl": { "type": "string", "description": "官网来源链接，必填" },
     "verified": { "type": "boolean", "description": "是否经官网核验；false=示例数据，前端须标示例" }
