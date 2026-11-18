@@ -34,6 +34,7 @@ Page({
       try { wx.setStorageSync('search_history', h); } catch (e) {}
     }
   },
+  tapHistory(e) { const kw = (e.currentTarget && e.currentTarget.dataset && e.currentTarget.dataset.kw) || ''; if (!kw) return; this.setData({ keyword: kw }, () => this.doSearch()); },
   clearHistory() { this.setData({ history: [] }); try { wx.removeStorageSync('search_history'); } catch (e) {} },
   goSchool(e) { wx.navigateTo({ url: `/pages/school-detail/index?id=${e.currentTarget.dataset.id}` }); }
 });

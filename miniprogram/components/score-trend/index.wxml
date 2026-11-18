@@ -1,11 +1,11 @@
-<!-- 轻量趋势条：无第三方依赖版，后期可换 echarts-for-weixin -->
-<view style="display:flex;align-items:flex-end;gap:12rpx;height:160rpx;margin-top:12rpx;">
-  <block wx:for="{{lines}}" wx:key="year">
-    <view style="flex:1;text-align:center;">
-      <view class="muted">{{item.total}}分</view>
-      <view style="background:#1A56DB;border-radius:8rpx;height:{{item.total ? (item.total - 250) : 8}}rpx;min-height:16rpx;max-height:110rpx;"></view>
-      <view class="muted">{{item.year}}</view>
+<!-- 轻量趋势条：动态归一化高度，兼容 300 分制与 500 分制，不溢出容器 -->
+<view wx:if="{{bars.length}}" style="display:flex;align-items:flex-end;gap:12rpx;height:180rpx;margin-top:12rpx;padding-top:8rpx;">
+  <block wx:for="{{bars}}" wx:key="year">
+    <view style="flex:1;min-width:0;text-align:center;">
+      <view class="muted" style="line-height:32rpx;">{{item.total}}分</view>
+      <view style="background:#1A56DB;border-radius:8rpx;height:{{item.barHeight || 28}}rpx;min-height:16rpx;max-height:96rpx;margin:4rpx 0;"></view>
+      <view class="muted" style="line-height:32rpx;">{{item.year}}</view>
     </view>
   </block>
 </view>
-<view wx:if="{{!lines.length}}" class="muted">暂无趋势数据</view>
+<view wx:if="{{!bars.length}}" class="muted">暂无趋势数据</view>

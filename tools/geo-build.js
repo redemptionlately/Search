@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 function main() {
-  const schools = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'database', 'seed', 'schools.sample.json'), 'utf8'));
+  const schools = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'database', 'seed', 'schools.json'), 'utf8'));
   const byProvince = {}, byCity = {};
   for (const s of schools) {
     byProvince[s.province] = (byProvince[s.province] || 0) + 1;

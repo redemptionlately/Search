@@ -26,7 +26,7 @@ function matchNational(national, major) {
 // 专业码双向归属：0854 含 085404，081200 精确
 function matchMajor(row, code) {
   const mc = row.majorCode || '';
-  if (!mc) return row.majorName && false;
+  if (!mc) return Boolean(row.majorName);
   return mc === code || mc.startsWith(code) || code.startsWith(mc);
 }
 
